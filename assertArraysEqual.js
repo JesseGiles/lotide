@@ -19,15 +19,15 @@ const eqArrays = function(input1, input2) {
   } return true;
 };
 
-assertArrayEqual = function (input1, input2) {
+const assertArrayEqual = function(input1, input2) {
   let result = eqArrays(input1, input2);
-  console.log(result)
-  if (result === true){
+  console.log(result);
+  if (result === true) {
     console.log(`✅✅✅ Assertion Passed: ${input1} === ${input2}`);
   } else if (result === false) {
     console.log(`🛑🛑🛑 Assertion Failed: ${input1} !== ${input2}`);
   }
-}
+};
 
 assertArrayEqual([1, 2, 3], [1, 2, 3]); // => should PASS
 assertArrayEqual([1, 2, 3], [3, 2, 1]); // => should FAIL
