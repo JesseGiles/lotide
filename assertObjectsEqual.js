@@ -10,22 +10,21 @@ As a workaround to this problem, we can modify our function to use the util libr
 const inspect = require('util').inspect; // <= add this line
 */
 
-const eqArrays = function(input1, input2) {
-  for (let index in input1) {
-    if (input1[index] !== input2[index]) {
+const eqArrays = function(array1, array2) {
+
+  if (Array.isArray(array1) === false || Array.isArray(array2) === false) {
+    return false;
+  }
+
+  if (array1.length !== array2.length) {
+    return false;
+  }
+
+  for (let index in array1) {
+    if (array1[index] !== array2[index]) {
       return false;
     }
   } return true;
-};
-
-const assertArrayEqual = function(input1, input2) {
-  let result = eqArrays(input1, input2);
-  console.log(result);
-  if (result === true) {
-    console.log(`✅✅✅ Assertion Passed: ${input1} === ${input2}`);
-  } else if (result === false) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${input1} !== ${input2}`);
-  }
 };
 
 const eqObjects = function(object1, object2) {
@@ -68,9 +67,11 @@ const cd = { c: "1", d: ["2", 3] };
 const cd2 = { c: "1", d: ["2", 3, 4] };
 
 
-//assertObjectsEqual({ a: '1', b: 2 }, { b: 2, a: '1' });
-//assertObjectsEqual({ a: "1", b: "2" }, { a: "1", b: "2", c: "3" });
+assertObjectsEqual({ a: '1', b: 2 }, { b: 2, a: '1' });
+assertObjectsEqual({ a: "1", b: "2" }, { a: "1", b: "2", c: "3" });
+assertObjectsEqual({ c: "1", d: ["2", 3] }, { d: ["2", 3], c: "1" });
 assertObjectsEqual(cd, cd2);
+
 
 /*
 expected output

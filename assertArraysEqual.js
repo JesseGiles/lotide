@@ -11,9 +11,18 @@ Functions that do not return values and instead print out messages to the consol
 For this reason, we will not be writing assertions (test code) for assertArraysEqual. That said, you can and should call the function below its declaration and visually ensure that the message printed to the console is accurate.
 */
 
-const eqArrays = function(input1, input2) {
-  for (let index in input1) {
-    if (input1[index] !== input2[index]) {
+const eqArrays = function(array1, array2) {
+
+  if (Array.isArray(array1) === false || Array.isArray(array2) === false) {
+    return false;
+  }
+
+  if (array1.length !== array2.length) {
+    return false;
+  }
+
+  for (let index in array1) {
+    if (array1[index] !== array2[index]) {
       return false;
     }
   } return true;

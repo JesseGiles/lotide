@@ -23,13 +23,22 @@ const assertEqual = function(actual, expected) {
 
   return truthyFalsy; */
 
-const eqArrays = function(array1, array2) {
-  for (let index in array1) {
-    if (array1[index] !== array2[index]) {
+  const eqArrays = function(array1, array2) {
+
+    if (Array.isArray(array1) === false || Array.isArray(array2) === false) {
       return false;
     }
-  } return true;
-};
+  
+    if (array1.length !== array2.length) {
+      return false;
+    }
+  
+    for (let index in array1) {
+      if (array1[index] !== array2[index]) {
+        return false;
+      }
+    } return true;
+  };
 
 console.log(eqArrays([1, 2, 3], [1, 2, 3])); // => true  < ----  calling 
 console.log(eqArrays([1, 2, 3], [3, 2, 1])); // => false  <---- logging
