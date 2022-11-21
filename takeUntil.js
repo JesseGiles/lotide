@@ -47,7 +47,7 @@ const takeUntil = function(array, callback) {
 
   for (let values of array) {
     
-    if (callback(values) === true) {
+    if (callback(values)) {
       return slicedArray;
     }
     slicedArray.push(values);

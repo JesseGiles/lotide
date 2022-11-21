@@ -43,6 +43,20 @@ const without = function(source, itemsToRemove) {
   console.log(`final array: `, finalArray);
 };
 
+///diff solution: 
+/*
+const without = function(source, itemsToRemove) {
+  const results = [];
+
+  for (const item of source) {
+    if (!itemsToRemove.includes(item)) {
+      results.push(item);
+    }
+  }
+  return results;
+}
+*/ 
+
 const words = ["hello", "world", "lighthouse"];
 without(words, ["lighthouse"]); // no need to capture return value for this test case
 without([1, 2, 3], [1]);
