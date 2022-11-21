@@ -1,7 +1,7 @@
 {
-  "name": "lotide",
+  "name": "@jessegiles/lotide",
   "version": "1.0.0",
-  "description": "",
+  "description": "Library of functions created as part of Lighthouse Labs web dev bootcamp",
   "main": "assertArraysEqual.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/JesseGiles/lotide.git"
   },
-  "author": "",
+  "author": "jessegiles",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/JesseGiles/lotide/issues"
