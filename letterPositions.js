@@ -5,7 +5,7 @@ We'll implement a new function indexnumPositions which will return all the indic
 
 For each indexnum, instead of returning just one number to represent its number of occurrences, multiple numbers may be needed to represent all the places in the string that it shows up.
 
-example output for "lighthouse":
+example output for "lighthouse in the house":
 {
   l: [0],
   i: [1, 11],
@@ -20,29 +20,30 @@ example output for "lighthouse":
 }
 */
 
-const eqArrays = function(input1, input2) {
-  for (let index in input1) {
-    if (input1[index] !== input2[index]) {
-      return false;
-    }
-  } return true;
-};
+// const eqArrays = function(input1, input2) {
+//   for (let index in input1) {
+//     if (input1[index] !== input2[index]) {
+//       return false;
+//     }
+//   } return true;
+// };
 
-const assertArraysEqual = function(input1, input2) {
-  let result = eqArrays(input1, input2);
-  console.log(result);
-  if (result === true) {
-    console.log(`✅✅✅ Assertion Passed: ${input1} === ${input2}`);
-  } else if (result === false) {
-    console.log(`🛑🛑🛑 Assertion Failed: ${input1} !== ${input2}`);
-  }
-};
+// const assertArraysEqual = function(input1, input2) {
+//   let result = eqArrays(input1, input2);
+//   console.log(result);
+//   if (result === true) {
+//     console.log(`✅✅✅ Assertion Passed: ${input1} === ${input2}`);
+//   } else if (result === false) {
+//     console.log(`🛑🛑🛑 Assertion Failed: ${input1} !== ${input2}`);
+//   }
+// };
 
 const indexnumPositions = function(sentence) {
   const results = {};
       
   for (let indexnum in sentence) {
-   
+    indexnum = Number(indexnum);
+
     if (sentence[indexnum] === " ") {
       //do nothing for spaces
     } else if (results[sentence[indexnum]]) { //if already key for letter
@@ -52,12 +53,9 @@ const indexnumPositions = function(sentence) {
     }
   }
 
-  //console.log(`final answer: `, results);
   return results;
 
 };
 
-console.log(`hello: \n`, indexnumPositions("hello"));
-console.log(`hheellooo: \n`, indexnumPositions("hheellooo"));
- 
+module.exports = indexnumPositions;
     
