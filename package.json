@@ -2,7 +2,7 @@
   "name": "@jessegiles/lotide",
   "version": "1.0.0",
   "description": "Library of functions created as part of Lighthouse Labs web dev bootcamp",
-  "main": "assertArraysEqual.js",
+  "main": "",
   "directories": {
     "test": "test"
   },
